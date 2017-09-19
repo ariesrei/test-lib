@@ -1,0 +1,10 @@
+# STEPS
+
+
+1. Install Docker
+	-$ docker -v (version of docker)
+2. Install NPM
+	-$ npm -v (version on npm)
+
+3. $ npm install
+4
