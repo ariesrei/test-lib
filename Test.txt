@@ -17,6 +17,9 @@
 		$ npm i --save-dev rollup-plugin-node-resolve
 		$ npm i --save-dev rollup-plugin-json
 
-
+	"scripts": {
+    		"test": "echo \"Error: no test specified\" && exit 1",
+    		"build": "rollup -c"
+  		},
 
 5. $
