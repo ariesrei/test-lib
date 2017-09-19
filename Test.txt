@@ -1,10 +1,22 @@
 # STEPS
 
 
-1. Install Docker
-	-$ docker -v (version of docker)
-2. Install NPM
-	-$ npm -v (version on npm)
+1. Install Docker -$ docker -v (version of docker)
 
-3. $ npm install
-4
+2. Install NPM -$ npm -v (version on npm)
+
+3. $ npm init -y (generate package.json)
+
+4. $ npm install [packagename] --save-dev
+
+	$ npm install rollup --save-dev  (rollup builder package)
+	
+	4.1. install rollup plugins
+		
+		$ npm i --save-dev rollup-plugin-commonjs
+		$ npm i --save-dev rollup-plugin-node-resolve
+		$ npm i --save-dev rollup-plugin-json
+
+
+
+5. $
