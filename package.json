@@ -15,6 +15,7 @@
     "karma-mocha-reporter": "^2.2.4",
     "live-server": "^1.2.0",
     "mocha": "^3.5.3",
+    "require": "^2.4.20",
     "rollup": "^0.50.0",
     "rollup-plugin-babel": "^3.0.2",
     "rollup-plugin-commonjs": "^8.2.1",

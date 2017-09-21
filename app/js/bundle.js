@@ -1,14 +1,29 @@
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 var version = "1.0.0";
 
 /********************
 | 	lib/multiply
 |*********************/
-function multiply(a, b) {
+// export function multiply(a, b) {
 
-  b = typeof b !== 'undefined' ? b : 1;
-  return a * b;
+//   b = (typeof b !== 'undefined') ?  b : 1;
+//   return a * b;
+
+// }
+
+
+class Calculator {
+
+	constructor() {}
+
+	multiply(a, b) {
+		b = typeof b !== 'undefined' ? b : 1;
+		return a * b;
+	}
+
 }
 
 /********************
@@ -26,7 +41,7 @@ function mailTo() {
 		array.forEach(function (element) {
 
 			var user = element.innerHTML || false;
-			var domain = element.getAttribute('href').replace('http://www.', '').replace('www.', '').replace('http://', '').replace('/', '') || false;
+			var domain = element.getAttribute('data-url').replace('http://www.', '').replace('www.', '').replace('http://', '').replace('/', '') || false;
 
 			var newEmail = user + '@' + domain;
 
@@ -36,19 +51,15 @@ function mailTo() {
 }
 
 // src/main.js
+//import { multiply } from '../lib/multiply';
+
 var main = (() => {
   console.log('version ' + version);
 });
 
-//mailTo();
-// Run some functions from our imported modules.
-//const result1 = multiply(2, 4);
+const result1 = new Calculator();
+result1.multiply(2, 4);
 
-// Print the results on the page.
-//const printTarget = document.getElementsByClassName('debug__output')[0];
-//printTarget.innerText = `multiply(2, 4) => ${result1}\n\n`;
-
-
-module.exports = { multiply, mailTo };
-
-module.exports = main;
+exports['default'] = main;
+exports.Calculator = Calculator;
+exports.mailTo = mailTo;
