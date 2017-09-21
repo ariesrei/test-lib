@@ -9,6 +9,7 @@ export default () => {
   console.log('version ' + version);
 }
 
+//mailTo();
 // Run some functions from our imported modules.
 //const result1 = multiply(2, 4);
 
