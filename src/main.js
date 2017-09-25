@@ -8,12 +8,12 @@ import { mailTo } from '../lib/mailTo';
 
 
 
-export default () => {
-  console.log('version ' + version);
-}
+// export default () => {
+//   console.log('version ' + version);
+// }
 
-const result1 = new Calculator();
-result1.multiply(2,4);
+// const result1 = new Calculator();
+// result1.multiply(2,4);
 
 //mailTo();
 // Run some functions from our imported modules.
@@ -24,4 +24,5 @@ result1.multiply(2,4);
 //printTarget.innerText = `multiply(2, 4) => ${result1}\n\n`;
 
 
-export { Calculator, mailTo };
+export { Calculator, mailTo }
+//module.exports = { Calculator }

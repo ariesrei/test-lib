@@ -2,18 +2,9 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var version = "1.0.0";
-
 /********************
 | 	lib/multiply
 |*********************/
-// export function multiply(a, b) {
-
-//   b = (typeof b !== 'undefined') ?  b : 1;
-//   return a * b;
-
-// }
-
 
 class Calculator {
 
@@ -53,13 +44,8 @@ function mailTo() {
 // src/main.js
 //import { multiply } from '../lib/multiply';
 
-var main = (() => {
-  console.log('version ' + version);
-});
 
-const result1 = new Calculator();
-result1.multiply(2, 4);
+//module.exports = { Calculator }
 
-exports['default'] = main;
 exports.Calculator = Calculator;
 exports.mailTo = mailTo;
