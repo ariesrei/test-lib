@@ -1,11 +1,14 @@
 {
   "name": "test-lib",
   "version": "1.0.0",
-  "description": "",
+  "description": "a test library",
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
+    "babel": "^6.23.0",
     "babel-core": "^6.26.0",
+    "browser-sync": "^2.18.13",
+    "browsersync": "0.0.1-security",
     "chai": "^4.1.2",
     "jasmine-core": "^2.8.0",
     "karma": "^1.7.1",
@@ -18,13 +21,14 @@
     "require": "^2.4.20",
     "rollup": "^0.50.0",
     "rollup-plugin-babel": "^3.0.2",
+    "rollup-plugin-browsersync": "^0.2.4",
     "rollup-plugin-commonjs": "^8.2.1",
     "rollup-plugin-json": "^2.3.0",
     "rollup-plugin-node-resolve": "^3.0.0"
   },
   "scripts": {
     "prestart": "node_modules/.bin/rollup -c --hide-modules",
-    "start": "live-server --open=app",
+    "start": "browser-sync start",
     "test": "mocha",
     "build": "BUILD_MODE=production && node_modules/.bin/rollup --hide-modules"
   },

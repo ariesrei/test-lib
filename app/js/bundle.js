@@ -39,6 +39,8 @@ function mailTo() {
 			element.innerHTML = '<a href="mailTo:' + newEmail + '">' + newEmail + '</a>';
 		});
 	}
+
+	document.getElementsByClassName('btn')[0].style.display = 'none';
 }
 
 // src/main.js

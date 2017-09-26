@@ -4,6 +4,7 @@ import json from 'rollup-plugin-json';
 import commonjs from 'rollup-plugin-commonjs';
 import resolve from 'rollup-plugin-node-resolve';
 import babel from 'rollup-plugin-babel';
+import browsersync from 'rollup-plugin-browsersync';
 
 
 export default {
@@ -23,5 +24,8 @@ export default {
   		main: true,
   		browser: true
   	}),
+    browsersync({
+      server: 'app'
+    }),
   ],
 };
