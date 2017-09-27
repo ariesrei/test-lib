@@ -1,9 +1,13 @@
 
-FROM diko316/alnode
+FROM mhart/alpine-node
 
-EXPOSE 8000
+WORKDIR .
 
-COPY . $PROJECT_ROOT
+COPY package.json .
+RUN npm i
 
-RUN npm install -d -y
+COPY . .
 
+EXPOSE 3000
+
+CMD ["npm", "start"]

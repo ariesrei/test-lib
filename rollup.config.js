@@ -25,7 +25,9 @@ export default {
   		browser: true
   	}),
     browsersync({
-      server: 'app'
+      server: 'app',
+      browser: ["google chrome", "firefox"],
+      open: false
     }),
   ],
 };

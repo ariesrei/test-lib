@@ -23,9 +23,38 @@
 	-$ npm install --save-dev rollup-plugin-commonjs
 	-$ npm install --save-dev rollup-plugin-node-resolve
 	-$ npm install --save-dev rollup-plugin-json
+	-$ npm install --save-dev rollup-plugin-babel
+	-$ npm install --save-dev rollup-plugin-browsersync
 
 	Create / Generate:
 		rollup.config.js
+
+
+		export default {
+  			input: 'src/main.js',
+  			output: {
+    				file: 'app/js/bundle.js',
+				format: 'cjs'
+		  	},
+		  	plugins: [
+		  		json(),
+			  	babel({
+			  		exclude: 'node_modules/**',
+			  	}),
+			  	commonjs(),
+			  	resolve({
+			  		jsnext: true,
+			  		main: true,
+			  		browser: true
+		  		}),
+			    	browsersync({
+			      		server: 'app',
+				      	browser: ["google chrome", "firefox"],
+				      	open: false
+			    	}),
+		  	],
+			};
+
 
 4. Install Babel
 	-$ npm install --save-dev babel
