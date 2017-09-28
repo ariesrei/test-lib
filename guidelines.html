@@ -7,19 +7,26 @@
 <title>Test Library</title>
 
 <style>
-.container {width: 70%; margin: 0 auto; border: 1px #ddd solid; padding: 10px;}
-pre {background-color: #f5f5f5; padding: 10px;}
-.code {background-color: #eee; padding: 10px; display: block; font-size: 10px;}
+body {background-color: #111111;}
+.container {border-radius: 10px; background-color: white; width: 70%; margin: 0 auto; border: 1px #ccc solid; padding: 30px 20px;}
+pre {background-color: #f5f5f5; border: 1px #ddd solid; padding: 20px; border-radius:5px;}
+.code {background-color: #ddd; padding: 20px; display: block; font-size: 10px;}
 .cmd {background-color: #111; color: #fff; font-size: 10px;}
 .cmd table td {padding: 5px;}
+table.usage {border-collapse: collapse; border: 1px #333 dashed; width: 100%;}
+table.usage td {padding: 5px 10px; border: 1px #333 dashed;}
 </style>
 </head>
 
 <body>
 	<div class="container">
-		
+	
+	<strong>Github</strong>
+	<a href="https://github.com/ariesrei/test-lib.git">https://github.com/ariesrei/test-lib.git</a>
+	
 	<h2>App guidelines</h2>
-
+	
+	
 	<h3>Docker</h3>
 	<pre>
 	1. Install Docker (https://www.docker.com)
@@ -34,11 +41,14 @@ pre {background-color: #f5f5f5; padding: 10px;}
 			docker-compose.yml -- (Optional)
 	</pre>
 
-	<h3>NodeJS and NPM</h3>
+	<h3>NodeJS and NPM package manager</h3>
 	<pre>
 	2. Install NodeJS (https://nodejs.org)
 		-$ sudo apt-get install -y nodejs
-		-$ npm -v (version of npm)
+		-$ node -v (node version)
+		-$ npm -v (npm version)
+
+	* Install node packages
 		-S npm i -g [packagename] (install globally)
 		-$ npm install --save-dev [packagename] (install package locally)
 		-$ npm init -y (generate package.json)
@@ -97,7 +107,7 @@ pre {background-color: #f5f5f5; padding: 10px;}
 	<h3>Rollup JS module bundler</h3>
 	<pre>
 	3. Install RollUp JS
-		-$ npm install --save-dev rollup ( 
+		-$ npm install --save-dev rollup
 	
 	* Install rollup plugins
 
@@ -128,11 +138,11 @@ pre {background-color: #f5f5f5; padding: 10px;}
 			  		main: true,
 			  		browser: true
 		  		}),
-			    	browsersync({
-			      		server: 'app',
-				      	browser: ["google chrome", "firefox"],
-				      	open: false
-			    	}),
+		    	browsersync({
+		      		server: 'app',
+			      	browser: ["google chrome", "firefox"],
+			      	open: false
+		    	}),
 		  	],
 		};
 	</div>
@@ -144,7 +154,7 @@ pre {background-color: #f5f5f5; padding: 10px;}
 	4. Install Babel
 		-$ npm install --save-dev babel
 		
-	* Babel requirements)
+	* Babel core (requirements)
 		-$ npm install --save-dev babel-core
 
 	</pre>
@@ -183,56 +193,45 @@ pre {background-color: #f5f5f5; padding: 10px;}
 		// base path that will be used to resolve all patterns (eg. files, exclude)
 		basePath: '',
 
-
 		// frameworks to use
 		// available frameworks: https://npmjs.org/browse/keyword/karma-adapter
 		frameworks: ['jasmine', 'requirejs'],
-
 
 		// list of files / patterns to load in the browser
 		files: [
 		{pattern: 'test/*.js', included: false}
 		],
 
-
 		// list of files to exclude
 		exclude: [
 		],
-
 
 		// preprocess matching files before serving them to the browser
 		// available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
 		preprocessors: {
 		},
 
-
 		// test results reporter to use
 		// possible values: 'dots', 'progress'
 		// available reporters: https://npmjs.org/browse/keyword/karma-reporter
 		reporters: ['mocha'],
 
-
 		// web server port
 		port: 9876,
 
-
 		// enable / disable colors in the output (reporters and logs)
 		colors: true,
-
 
 		// level of logging
 		// possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
 		logLevel: config.LOG_INFO,
 
-
 		// enable / disable watching file and executing tests whenever any file changes
 		autoWatch: true,
-
 
 		// start these browsers
 		// available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
 		browsers: ['Firefox', 'Chrome'],
-
 
 		// Continuous Integration mode
 		// if true, Karma captures browsers, runs the tests and exits
@@ -243,7 +242,6 @@ pre {background-color: #f5f5f5; padding: 10px;}
 		concurrency: Infinity
 		})
 		}
-
 		</div>
 	</pre>
 
@@ -251,49 +249,53 @@ pre {background-color: #f5f5f5; padding: 10px;}
 	<pre>
 	8. Install browser-sync
 		-$ npm install --save-dev browser-sync
+
+	* using npm start - localhost:3000
+	* using docker run - 172.17.0.2:3000
+
 	</pre>
-
-
  
  	<h3>Docker configuration</h3>
 
 	Create a file and name it <strong>Dockerfile</strong>
 
  	<pre>
-	Download images from hub.docker.com
-		-$ docker pull alpine
+	Download base images from hub.docker.com
+
+	ex. -$ docker pull alpine
 		-$ docker pull diko316/alnode
 		-$ docker pull mhart/alpine-node
 
-
+	<strong>I'm using markshust alpine node base image for my app.</strong>
+	<br/>
 	Copy this to your Dockerfile
- 		<div class="code">
- 			FROM mhart/alpine-node
+	<div class="code">
+		FROM mhart/alpine-node
 
- 			#set the working directory
-			WORKDIR .
+		#set the working directory
+		WORKDIR .
 
-			COPY package.json .
-			RUN npm i
+		COPY package.json .
+		RUN npm i
 
-			COPY . .
+		COPY . .
 
-			EXPOSE 3000
+		EXPOSE 3000
 
-			CMD ["npm", "start"]
-		</div>
+		CMD ["npm", "start"]
+	</div>
 
-		To build a new images run this code.
+	To build a new image run this code.
 
-			-$ docker build -t [containerName] .
+		-$ docker build -t [containerName] .
 
-			ex. -$ docker build -t ariesrei/app .
+		ex. -$ docker build -t ariesrei/app .
 
-			this will create the following below
-			
-			-$ docker images
+		this will create the following below
+		
+		-$ docker images
 
-			<div class="cmd">
+	<div class="cmd">
 -$ docker images
 				<table>
 				<tr>
@@ -321,20 +323,58 @@ pre {background-color: #f5f5f5; padding: 10px;}
 				
 			</div>
 
-		To run the container
 
-			-$ docker run -d [containerName]
+	<table class="usage">
+	<tr>
+	<td colspan="3"> <h4>Command and Usage</h4></td>
+	</tr>
+	<tr>
+	<td>-$ docker build -t ariesrei/app .</td>
+	<td> # build an image from a Dockerfile</td>
+	<td> Usage: docker build [OPTIONS] PATH | URL | -</td>
+	</tr>
+	<tr>
+	<td>-$ docker run -d ariesrei/app</td>
+	<td> # run command in a new container</td>
+	<td> Usage: docker run [OPTIONS] IMAGE [COMMAND] [ARG...]</td>
+	</tr>
+	<tr>
+	<td>-$ docker stop CONTAINER-ID/NAMES</td>
+	<td> # stop one or more running containers</td>
+	<td> Usage: docker stop [OPTIONS] CONTAINER [CONTAINER...]</td>
+	</tr>
 
-			ex. docker run -d ariesrei/app
+	<tr>
+	<td>-$ docker container ls <br/> docker ps</td>
+	<td> # list all running container</td>
+	<td> Usage: docker container ls</td>
+	</tr>
 
-		To stop the container
+	<tr>
+	<td>-$ docker container ls -a</td>
+	<td> # list all container (running or exited)</td>
+	<td> Usage: docker container ls -a</td>
+	</tr>
 
-			-$ docker stop NAMES
+	<tr>
+	<td>-$ docker images</td>
+	<td> # list all images (pulled images or newly build images)</td>
+	<td> Usage: docker images</td>
+	</tr>
 
-		To check running container
-			-$ docker container ls 
-			OR 
-			-$ docker ps
+	<tr>
+	<td>-$ docker rmi ### </td>
+	<td> # delete image using IMAGE ID</td>
+	<td> Usage: docker rmi 32f ( ID: <strong>32f</strong>2004195.... )</td>
+	</tr>
+
+	<tr>
+	<td>-$ docker rm ### </td>
+	<td> # delete container using CONTAINER ID</td>
+	<td> Usage: docker rm 992 ( ID: <strong>992</strong>32113ff2.... )</td>
+	</tr>
+
+	</table>
 	</pre>
 
 	</div>
