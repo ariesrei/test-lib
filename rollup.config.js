@@ -6,7 +6,6 @@ import resolve from 'rollup-plugin-node-resolve';
 import babel from 'rollup-plugin-babel';
 import browsersync from 'rollup-plugin-browsersync';
 
-
 export default {
   input: 'src/main.js',
   output: {
