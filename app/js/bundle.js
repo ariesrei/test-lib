@@ -36,7 +36,7 @@ function mailTo() {
 
 			var newEmail = user + '@' + domain;
 
-			element.innerHTML = '<a href="mailTo:' + newEmail + '">' + newEmail + '</a>';
+			element.outerHTML = '<a style="display: block;" href="mailTo:' + newEmail + '">' + newEmail + '</a>';
 		});
 	}
 
@@ -44,8 +44,6 @@ function mailTo() {
 }
 
 // src/main.js
-//import { multiply } from '../lib/multiply';
-
 
 //module.exports = { Calculator }
 

@@ -1,0 +1,20 @@
+
+version: '3'
+services:
+
+  webapp:
+    build: .
+    image: ariesrei/app:latest
+    ports:
+     - "5000:5000"
+    volumes:
+     - mydata:/var/lib/docker/volumes/testlib_mydata/_data
+    depends_on:
+      - testapp
+  
+  testapp:
+    image: ariesrei/app:latest
+    command: "npm test"
+
+volumes:
+  mydata:

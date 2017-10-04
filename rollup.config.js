@@ -26,7 +26,8 @@ export default {
     browsersync({
       server: 'app',
       browser: ["google chrome", "firefox"],
-      open: false
+      open: false,
+      files: ["./*.css", "./*.js", "./app/*.html"]
     }),
   ],
 };
