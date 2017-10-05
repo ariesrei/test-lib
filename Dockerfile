@@ -2,13 +2,11 @@
 # Using base image from mhart/alpine-node
 FROM mhart/alpine-node
 
-WORKDIR .
+ADD . /app
 
-COPY package.json .
+WORKDIR /app
 
 RUN npm i
-
-COPY . .
 
 EXPOSE 3000
 

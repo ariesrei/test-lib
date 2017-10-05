@@ -6,9 +6,9 @@ services:
     build: .
     image: ariesrei/app:latest
     ports:
-     - "5000:5000"
+     - "3000:3000"
     volumes:
-     - mydata:/var/lib/docker/volumes/testlib_mydata/_data
+     - .:/app
     depends_on:
       - testapp
   
@@ -16,5 +16,3 @@ services:
     image: ariesrei/app:latest
     command: "npm test"
 
-volumes:
-  mydata:
