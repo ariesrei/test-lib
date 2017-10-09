@@ -1,0 +1,27 @@
+
+body {
+	background-color: #111111;
+}
+
+pre {
+	border: 1px #ddd solid;
+	padding: 10px;
+	background-color: #e5e5e5;
+}
+
+.container {
+	width: 70%;
+	padding: 20px;
+	border: 1px #333 solid;
+	background-color: #eee;
+	margin: 0 auto;
+	border-radius: 20px;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+}
+
+.emailTo { 
+	display: block; 
+	padding: 5px; 
+	border: 1px #ddd dashed; 
+}

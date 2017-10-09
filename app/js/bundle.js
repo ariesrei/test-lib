@@ -8,11 +8,18 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 class Calculator {
 
-	constructor() {}
+	constructor(a, b) {
+		this.a = a;
+		this.b = b;
+	}
 
 	multiply(a, b) {
 		b = typeof b !== 'undefined' ? b : 1;
 		return a * b;
+	}
+
+	add(a, b) {
+		return a + b;
 	}
 
 }
@@ -20,32 +27,89 @@ class Calculator {
 /********************
 | 	lib/mailTo
 |*********************/
-function mailTo() {
+// export function mailTo() {
 
-	var countClass = document.querySelectorAll(".emailTo"),
-	    i;
+// 	var countClass = document.querySelectorAll(".emailTo"),
+// 		i;
 
-	for (i = 0; i < countClass.length; i++) {
-		var email = document.getElementsByClassName('emailTo')[i];
-		var array = [email];
+// 	for (i = 0; i < countClass.length; i++) {
+// 	    var email = document.getElementsByClassName('emailTo')[i];
+// 	    var array = [email];
 
-		array.forEach(function (element) {
+// 	    array.forEach(function(element) {
 
-			var user = element.innerHTML || false;
-			var domain = element.getAttribute('data-url').replace('http://www.', '').replace('www.', '').replace('http://', '').replace('/', '') || false;
+// 	    	var user = element.innerHTML || false;
+// 	    	var	domain = element.getAttribute('data-url')
+// 	    				.replace('http://www.', '')
+// 						.replace('www.', '')
+// 						.replace('http://', '')
+// 						.replace('/', '') || false;
 
-			var newEmail = user + '@' + domain;
+// 	    	var newEmail = user+'@'+domain;
 
-			element.outerHTML = '<a style="display: block;" href="mailTo:' + newEmail + '">' + newEmail + '</a>';
-		});
+// 	    	element.outerHTML = '<a style="display: block;" href="mailTo:'+newEmail+'">'+newEmail+'</a>';
+// 		});
+// 	}
+
+// 	document.getElementsByClassName('btn')[0].style.display = 'none';	
+// }
+
+
+class Email {
+
+	constructor(activator) {
+		// this.el = document.createElement("div");
+		// this.el.className = "btn";
+		//       //this.el.style.display = "none";
+		//    	activator.addEventListener("click", (e) => { this.onClick(e); });
+		this.domElement.addEventListener('click', this.handler.bind(this));
 	}
 
-	document.getElementsByClassName('btn')[0].style.display = 'none';
+	// onClick(evt) {
+	//       alert("Aries!");
+	//       this.el.style.display = "";
+	//   }
+
+	handler() {
+		this.sayHello();
+	}
+
+	sayHello() {
+		alert("HELLOOOOO!!");
+	}
+	// 	convert() {
+	//    var countClass = document.querySelectorAll(".emailTo"),
+	// i;
+
+	// for (i = 0; i < countClass.length; i++) {
+	//     var email = document.getElementsByClassName('emailTo')[i];
+	//     var array = [email];
+
+	//     array.forEach(function(element) {
+
+	//     	var user = element.innerHTML || false;
+	//     	var	domain = element.getAttribute('data-url')
+	//     				.replace('http://www.', '')
+	// 					.replace('www.', '')
+	// 					.replace('http://', '')
+	// 					.replace('/', '') || false;
+
+	//     	var newEmail = user+'@'+domain;
+
+	//     	element.outerHTML = '<a style="display: block;" href="mailTo:'+newEmail+'">'+newEmail+'</a>';
+	// 	});
+	// }
+
+	// document.getElementsByClassName('btn')[0].style.display = 'none';	
+	// 	}
+
 }
 
-// src/main.js
+let test = new Email();
 
-//module.exports = { Calculator }
+// src/main.js
+//import { version } from '../package.json';
+//import { mailTo } from '../lib/mailTo';    // import fn
 
 exports.Calculator = Calculator;
-exports.mailTo = mailTo;
+exports.Email = Email;

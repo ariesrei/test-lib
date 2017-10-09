@@ -4,26 +4,37 @@
 	<meta charset='utf-8'>
 	<meta name='viewport' content='width=device-width'>
 	<title>Test Lib</title>
+	<link rel="stylesheet" href="./css/style.css" />
 
-	<style>
-		.emailTo { display: block; padding: 5px; border: 1px #ddd dashed; }
-	</style>
 </head>
 
 <body>
-	<h1>Test Lib!!!</h1>
-	<h2>Aries 12345678</h2>
 
-	<h1>Library</h1>
+	<div class="container">
+	<h1>Test Lib</h1>
 
-	<button class="btn" onclick="mailTo()">Convert</button>
-	
+	<pre>
+
+	&lt;div data-url="http://www.google.com" class="emailTo"&gt;iamemail&lt;/div&gt;
+
+	converted to:
+
+	&lt;a href="mailto:iamemail@google.com"&gt; iamemail@google.com &lt;/a&gt;
+
+	</pre>
+
+
+
+	<button class="btn" onclick="">Convert</button>
+
 	<div data-url="http://www.google.com" class="emailTo">iamemail</div>
 	<div data-url="http://www.google.com" class="emailTo">iamemail2</div>
 	<div data-url="http://www.google.com" class="emailTo">iamemail3</div>
  
 
-	<script src='js/bundle.js'></script>
+ 	</div>
+
+	<script src='./js/bundle.js'></script>
 
 
 </body>

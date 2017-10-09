@@ -27,7 +27,7 @@ export default {
       server: 'app',
       browser: ["google chrome", "firefox"],
       open: false,
-      files: ["./*.css", "./src/*.js", "./app/*.html"]
+      files: ["./*.js", "./app/css/*.css", "./src/*.js", "./app/*.html", "./lib/*.js"]
     }),
   ],
 };

@@ -1,22 +1,9 @@
 // src/main.js
-import { version } from '../package.json';
-import Calculator from '../lib/multiply';
-import { mailTo } from '../lib/mailTo';
+//import { version } from '../package.json';
+//import { mailTo } from '../lib/mailTo';    // import fn
 
-// export default () => {
-//   console.log('version ' + version);
-// }
+import Calculator from '../lib/calculator';
+import Email from '../lib/mailTo';
 
-// const result1 = new Calculator();
-// result1.multiply(2,4);
 
-//mailTo();
-// Run some functions from our imported modules.
-//const result1 = multiply(2, 4);
-
-// Print the results on the page.
-//const printTarget = document.getElementsByClassName('debug__output')[0];
-//printTarget.innerText = `multiply(2, 4) => ${result1}\n\n`;
-
-export { Calculator, mailTo }
-//module.exports = { Calculator }
+export { Calculator, Email }
