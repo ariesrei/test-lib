@@ -20,8 +20,9 @@ pre {
 	-webkit-border-radius: 20px;
 }
 
-.emailTo { 
-	display: block; 
+[href],
+.emailTo {  
+	display: inline-block;
 	padding: 5px; 
 	border: 1px #ddd dashed; 
 }

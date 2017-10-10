@@ -1,9 +1,8 @@
+(function () {
 'use strict';
 
-Object.defineProperty(exports, '__esModule', { value: true });
-
 /********************
-| 	lib/multiply
+| 	Class Calculator
 |*********************/
 
 class Calculator {
@@ -19,97 +18,71 @@ class Calculator {
 	}
 
 	add(a, b) {
+		alert(a + b);
+
 		return a + b;
 	}
 
 }
 
 /********************
-| 	lib/mailTo
+| Class Email
 |*********************/
-// export function mailTo() {
-
-// 	var countClass = document.querySelectorAll(".emailTo"),
-// 		i;
-
-// 	for (i = 0; i < countClass.length; i++) {
-// 	    var email = document.getElementsByClassName('emailTo')[i];
-// 	    var array = [email];
-
-// 	    array.forEach(function(element) {
-
-// 	    	var user = element.innerHTML || false;
-// 	    	var	domain = element.getAttribute('data-url')
-// 	    				.replace('http://www.', '')
-// 						.replace('www.', '')
-// 						.replace('http://', '')
-// 						.replace('/', '') || false;
-
-// 	    	var newEmail = user+'@'+domain;
-
-// 	    	element.outerHTML = '<a style="display: block;" href="mailTo:'+newEmail+'">'+newEmail+'</a>';
-// 		});
-// 	}
-
-// 	document.getElementsByClassName('btn')[0].style.display = 'none';	
-// }
-
 
 class Email {
 
-	constructor(activator) {
-		// this.el = document.createElement("div");
-		// this.el.className = "btn";
-		//       //this.el.style.display = "none";
-		//    	activator.addEventListener("click", (e) => { this.onClick(e); });
-		this.domElement.addEventListener('click', this.handler.bind(this));
+	constructor(name) {
+
+		var self = this;
+
+		//self.el = document.getElementById("demo");
+		//self.el.innerHTML = "Convert email";
+		//self.el.addEventListener("click", self.convert.bind(self));
+
+		self.el = window;
+		self.el.addEventListener("load", self.convert.bind(self));
 	}
 
-	// onClick(evt) {
-	//       alert("Aries!");
-	//       this.el.style.display = "";
-	//   }
+	convert() {
 
-	handler() {
-		this.sayHello();
+		var queryClass = document.querySelectorAll(".emailTo"),
+		    countClass = queryClass.length,
+		    i;
+
+		//alert(countClass);
+
+		if (countClass != 0) {
+
+			for (i = countClass; i--;) {
+				var email = document.getElementsByClassName('emailTo')[i],
+				    array = [email];
+
+				array.forEach(function (element) {
+
+					var user = element.innerHTML || false;
+					var domain = element.getAttribute('data-url').replace('http://www.', '').replace('www.', '').replace('http://', '').replace('/', '') || false;
+
+					var newEmail = user + '@' + domain;
+
+					element.outerHTML = '<a href="mailTo:' + newEmail + '">' + newEmail + '</a>';
+				});
+			}
+			//document.getElementsByClassName('btn')[0].style.display = 'none';	
+		}
 	}
-
-	sayHello() {
-		alert("HELLOOOOO!!");
-	}
-	// 	convert() {
-	//    var countClass = document.querySelectorAll(".emailTo"),
-	// i;
-
-	// for (i = 0; i < countClass.length; i++) {
-	//     var email = document.getElementsByClassName('emailTo')[i];
-	//     var array = [email];
-
-	//     array.forEach(function(element) {
-
-	//     	var user = element.innerHTML || false;
-	//     	var	domain = element.getAttribute('data-url')
-	//     				.replace('http://www.', '')
-	// 					.replace('www.', '')
-	// 					.replace('http://', '')
-	// 					.replace('/', '') || false;
-
-	//     	var newEmail = user+'@'+domain;
-
-	//     	element.outerHTML = '<a style="display: block;" href="mailTo:'+newEmail+'">'+newEmail+'</a>';
-	// 	});
-	// }
-
-	// document.getElementsByClassName('btn')[0].style.display = 'none';	
-	// 	}
-
 }
-
-let test = new Email();
 
 // src/main.js
 //import { version } from '../package.json';
 //import { mailTo } from '../lib/mailTo';    // import fn
 
-exports.Calculator = Calculator;
-exports.Email = Email;
+// var test = new Calculator();
+// alert(test.multiply(2,3));
+
+var convert = new Email();
+
+//var module = module;
+module.exports = { Calculator, Email };
+//export { Calculator, Email }
+
+}());

@@ -4,38 +4,46 @@
 	<meta charset='utf-8'>
 	<meta name='viewport' content='width=device-width'>
 	<title>Test Lib</title>
-	<link rel="stylesheet" href="./css/style.css" />
-
+	<link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
 
 	<div class="container">
-	<h1>Test Lib</h1>
+		
+		<h1>Test Lib</h1>
+		
+		<p>Avoid email crawlers, email scraping and email spammers with this simple element conversion</p>
 
-	<pre>
+		<pre>
 
-	&lt;div data-url="http://www.google.com" class="emailTo"&gt;iamemail&lt;/div&gt;
+		&lt;div data-url="http://www.google.com" class="emailTo"&gt;iamemail&lt;/div&gt; (source code)
 
-	converted to:
+		converted to:
 
-	&lt;a href="mailto:iamemail@google.com"&gt; iamemail@google.com &lt;/a&gt;
-
-	</pre>
-
+		iamemail@google.com
+		- &lt;a href="mailto:iamemail@google.com"&gt; iamemail@google.com &lt;/a&gt; (page displays)
 
 
-	<button class="btn" onclick="">Convert</button>
+		</pre>
 
-	<div data-url="http://www.google.com" class="emailTo">iamemail</div>
-	<div data-url="http://www.google.com" class="emailTo">iamemail2</div>
-	<div data-url="http://www.google.com" class="emailTo">iamemail3</div>
- 
+		<!-- <button id="demo">Demo</button> // with convert button -->
+
+		<div data-url="http://www.google.com" class="emailTo">iamemail</div><br/>
+
+		<div data-url="http://www.google.com" class="emailTo">iamemail2</div><br/>
+		
+		<div data-url="http://www.google.com" class="emailTo">iamemail3</div>
+	 
+
 
  	</div>
 
-	<script src='./js/bundle.js'></script>
+	<script src='js/bundle.js'></script>
 
+	<script id="__bs_script__"> 
+		document.write("<script async src='http://HOST:3002/browser-sync/browser-sync-client.js?v=2.18.13'><\/script>".replace("HOST", location.hostname));
+	</script>
 
 </body>
 

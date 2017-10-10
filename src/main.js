@@ -6,4 +6,12 @@ import Calculator from '../lib/calculator';
 import Email from '../lib/mailTo';
 
 
-export { Calculator, Email }
+// var test = new Calculator();
+// alert(test.multiply(2,3));
+
+var convert = new Email();
+
+
+//var module = module;
+module.exports = { Calculator, Email };
+//export { Calculator, Email }
