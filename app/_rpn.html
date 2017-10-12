@@ -1,0 +1,46 @@
+<!Doctype html>
+<html ng-app="app">
+<head>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width'>
+	<title>Test Lib</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+	<link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+	<div class="container">
+		
+		<h1>RPN</h1>
+		
+		<p>Description: </p>
+
+		<pre>
+		Using AngularJS 1.6.x
+
+		ES6 Classes
+
+		</pre>
+
+		
+		<div style="margin-top: 100px; border:1px #ddd solid; margin-bottom:100px;" ng-controller="mainController as mainCtrl">
+			
+			 <div add-entry></div>
+
+			{{ mainCtrl.appService.entry }}
+			{{ mainCtrl.rpn }}
+		</div>
+
+
+ 	</div>
+
+	<script src='js/bundle.js'></script>
+
+	<script id="__bs_script__"> 
+		document.write("<script async src='http://HOST:3002/browser-sync/browser-sync-client.js?v=2.18.13'><\/script>".replace("HOST", location.hostname));
+	</script>
+
+</body>
+
+</html>

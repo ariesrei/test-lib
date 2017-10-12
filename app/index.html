@@ -1,49 +1,171 @@
 <!Doctype html>
-<html>
+<html ng-app="app">
 <head>
 	<meta charset='utf-8'>
 	<meta name='viewport' content='width=device-width'>
 	<title>Test Lib</title>
+	
 	<link rel="stylesheet" href="css/style.css" />
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- Bootstrap Tab Content -->
+	<script>
+		
+		document.getElementById("defaultOpen").click();
+
+		function openTab(evt, cityName) {
+		    // Declare all variables
+		    var i, tabcontent, tablinks;
+
+		    // Get all elements with class="tabcontent" and hide them
+		    tabcontent = document.getElementsByClassName("tabcontent");
+		    for (i = 0; i < tabcontent.length; i++) {
+		        tabcontent[i].style.display = "none";
+		    }
+
+		    // Get all elements with class="tablinks" and remove the class "active"
+		    tablinks = document.getElementsByClassName("tablinks");
+		    for (i = 0; i < tablinks.length; i++) {
+		        tablinks[i].className = tablinks[i].className.replace(" active", "");
+		    }
+
+		    // Show the current tab, and add an "active" class to the button that opened the tab
+		    document.getElementById(cityName).style.display = "block";
+		    evt.currentTarget.className += " active";
+		}
+
+	</script>
 </head>
 
 <body>
 
 	<div class="container">
 		
-		<h1>Test Lib</h1>
-		
-		<p>Avoid email crawlers, email scraping and email spammers with this simple element conversion</p>
 
-		<pre>
+		<div class="tab">
+	        <button class="tablinks" onclick="openTab(event, 'Home')" id="defaultOpen">Home</button>
+	        <button class="tablinks" onclick="openTab(event, 'Email')">Email Convert</button>
+	        <button class="tablinks" onclick="openTab(event, 'Rpn')">RPN</button>
+	        <button class="tablinks" onclick="openTab(event, 'Wpapp')">WP App</button>
+	    </div>
 
-		&lt;div data-url="http://www.google.com" class="emailTo"&gt;iamemail&lt;/div&gt; (source code)
+	    <div id="Home" class="tabcontent">
+	    	
+	    	<h1>Welcome</h1>
 
-		converted to:
-
-		iamemail@google.com
-		- &lt;a href="mailto:iamemail@google.com"&gt; iamemail@google.com &lt;/a&gt; (page displays)
+	    	<p>Under maintenance.</p>
 
 
-		</pre>
+	    	<h3>Web Technology</h3>
+	    	<ul>
+	    		<li>NodeJs</li>
+	    		<li>Docker and docker-compose</li>
+	    		<li>Rollup JS</li>
+	    		<li>CommonJS</li>
+	    		<li>Babel transpile</li>
+	    		<li>Karma test</li>
+	    		<li>Jasmine framework</li>
+	    		<li>Mocha reporter (not mocha uson)</li>
+	    		<li>Bootstrap 3.7.x</li>
+	    		<li>ES6 module</li>
+	    	</ul>
+	    </div>
 
-		<!-- <button id="demo">Demo</button> // with convert button -->
+	    <div id="Email" class="tabcontent">
 
-		<div data-url="http://www.google.com" class="emailTo">iamemail</div><br/>
+	    	<h1>Email link converter</h1>
+			
+			<h3>What is email link converter?</h3>
 
-		<div data-url="http://www.google.com" class="emailTo">iamemail2</div><br/>
-		
-		<div data-url="http://www.google.com" class="emailTo">iamemail3</div>
-	 
+			<p>Email converter is a simple js scirpt that transforms an element to an Email link format ( mailto:email@domain.com ). One purpose of this script is to avoid email crawlers, email scraping tools to grab your email and send you spam. </p>
 
+			<h3>How it works?</h3>
+
+			<p>
+			Just add the following on the Element.</p>
+
+			<ol>
+			<li>A className : class="emailTo".</li>
+			<li>A data url : data-url="your url".</li>
+			</ol>
+
+			<p>Email convert uses class attributes so that it can get all instances of the class "emailTo".</p>
+
+			<br/>
+			example:
+
+			<pre> &lt;div data-url="http://www.google.com" class="emailTo"&gt;iamemail&lt;/div&gt; (source code) </pre>
+
+			<p>Converted to: </p>
+			<pre> iamemail@google.com (page displays) - &lt;a href="mailto:iamemail@google.com"&gt; iamemail@google.com &lt;/a&gt;</pre>
+
+			<p>
+			Below are some class instances.
+			</p>
+
+			<div data-url="http://www.google.com" class="emailTo">iamemail</div><br/>
+
+			<div data-url="http://www.google.com" class="emailTo">iamemail2</div><br/>
+			
+			<div data-url="http://www.google.com" class="emailTo">iamemail3</div>
+		 
+
+			<br/><br/>
+
+			<a href="./_rpn.html">Updated RPN Lib</a>
+
+	    </div>
+
+	    <div id="Rpn" class="tabcontent">
+	    	
+		    <h1>RPN - Reverse Polish Notation</h1>	
+
+		    <p>This is an updated take on rpn. Using Docker engine, AngularJs 1.6.x.</p>
+ 
+		    <ul>
+		    	<li>AngularJS 1.6.x</li>
+		    	<li>Docker and docker-compose</li>
+		    	<li>Node</li>
+		    	<li>ES6 model</li>
+		    </ul>
+
+		    Github repo:
+	    	<a href="https://github.com/ariesrei/rpn.git"> RPN</a>
+
+
+
+	    </div>
+			
+		 <div id="Wpapp" class="tabcontent">
+	    	
+	    	<h1>Wordpress App</h1>
+
+	    	<p>Simple wordpress application running on docker engine.</p>
+
+
+	    	<h3>Web Technology</h3>
+
+	    	<ul>
+	    		<li>Docker Image : wordpress:latest; mysql:5.7</li>
+	    		<li>docker-compose</li>
+	    	</ul>
+
+	    	Github repo:
+	    	<a href="https://github.com/ariesrei/wpapp.git"> Wpapp</a>
+
+	    </div>
+
+	         
 
  	</div>
 
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
 	<script src='js/bundle.js'></script>
-
-	<script id="__bs_script__"> 
-		document.write("<script async src='http://HOST:3002/browser-sync/browser-sync-client.js?v=2.18.13'><\/script>".replace("HOST", location.hostname));
-	</script>
+	
+ 
 
 </body>
 

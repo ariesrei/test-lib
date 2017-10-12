@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
+    "angular": "^1.6.6",
     "babel": "^6.23.0",
     "babel-core": "^6.26.0",
     "browser-sync": "^2.18.13",
