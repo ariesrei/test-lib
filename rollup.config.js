@@ -16,6 +16,7 @@ export default {
   	json(),
   	babel({
   		exclude: 'node_modules/**',
+      plugins: ['external-helpers']
   	}),
   	commonjs({
       // non-CommonJS modules will be ignored, but you can also

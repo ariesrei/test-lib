@@ -14,7 +14,7 @@
 		
 		document.getElementById("defaultOpen").click();
 
-		function openTab(evt, cityName) {
+		function openTab(evt, cName) {
 		    // Declare all variables
 		    var i, tabcontent, tablinks;
 
@@ -31,7 +31,7 @@
 		    }
 
 		    // Show the current tab, and add an "active" class to the button that opened the tab
-		    document.getElementById(cityName).style.display = "block";
+		    document.getElementById(cName).style.display = "block";
 		    evt.currentTarget.className += " active";
 		}
 
@@ -44,13 +44,13 @@
 		
 
 		<div class="tab">
-	        <button class="tablinks" onclick="openTab(event, 'Home')" id="defaultOpen">Home</button>
+	        <button class="tablinks active" onclick="openTab(event, 'Home')" id="defaultOpen">Home</button>
 	        <button class="tablinks" onclick="openTab(event, 'Email')">Email Convert</button>
 	        <button class="tablinks" onclick="openTab(event, 'Rpn')">RPN</button>
 	        <button class="tablinks" onclick="openTab(event, 'Wpapp')">WP App</button>
 	    </div>
 
-	    <div id="Home" class="tabcontent">
+	    <div id="Home" class="tabcontent" style="display:block">
 	    	
 	    	<h1>Welcome</h1>
 
@@ -110,11 +110,7 @@
 			
 			<div data-url="http://www.google.com" class="emailTo">iamemail3</div>
 		 
-
-			<br/><br/>
-
-			<a href="./_rpn.html">Updated RPN Lib</a>
-
+ 
 	    </div>
 
 	    <div id="Rpn" class="tabcontent">

@@ -1,5 +1,5 @@
 
-var calc = require('../app/js/bundle');
+var calc = require('../app/lib/calculator');
 
 var expect = require('chai').expect;
 
